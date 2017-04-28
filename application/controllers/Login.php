@@ -8,12 +8,12 @@ class login extends CI_Controller {
     }
 
     public function index() {        
-        $this->load->view("includes/header");
-        $this->load->view("login/login_view");
+        //$this->load->view("includes/header");
+        $this->load->template("login/login_view");
     }
     
-    public function novo_usuario(){
-        $this->load->view("login/form_novousuario");
+    public function novo_login(){
+        $this->load->template("login/novologin_view");
     }
     
     public function novo_cadastro() {
@@ -26,6 +26,6 @@ class login extends CI_Controller {
             "torcidaUsuario" => $this->input->post("timeUsuario"),          
         );
         $this->Usuarios_model->salvaUsuario($usuario);
-        $this->load->template("time_view");
+        //this->load->template("time_view");
     }
 }
