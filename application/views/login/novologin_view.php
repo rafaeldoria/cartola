@@ -74,7 +74,7 @@
                             </div>
                         </div>
                     </div>
-                    <p id="resultado"></p>
+                    <label for="nomeUsuario" id="resultado"></label>                    
                     <div class="row">                          
                         <div class="form-group col-xs-12">
                             <label for="timeUsuario"><span class="text-danger" style="margin-right:5px;">*</span>Digite nome do seu time:</label>
@@ -89,7 +89,25 @@
                     </div>                         
                     <div class="row">
                         <div class="form-group col-xs-12">
-                            <select name="timesBuscados" id="timesBuscados" rows="5" cols="30"></select>
+                            <label for="timesBuscados"><span class="text-danger" style="margin-right:5px;">*</span>Selecione seu time:</label>
+                            <div class="input-group">
+                                <select class="form-control" name="timesBuscados" id="timesBuscados" rows="5" cols="30"></select>
+                                <span class="input-group-btn">
+                                    <label class="btn btn-warning"><span class="glyphicon glyphicon-hand-left" aria-hidden="true"></label>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">                          
+                        <div class="form-group col-xs-12">
+                            <label for="tecnico"><span class="text-danger" style="margin-right:5px;">*</span>Técnico:</label>
+                            <div class="input-group">
+                                <input class="form-control" id="tecnico" type="text" name="tecnico" required/>
+                                <span class="input-group-btn">
+                                    <label class="btn btn-warning"><span class="glyphicon glyphicon-user" aria-hidden="true"></label>
+                                </span>
+                                </span>
+                            </div>
                         </div>
                     </div>
                     <div class="form-group ">
