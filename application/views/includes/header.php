@@ -10,3 +10,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
     </head>
     <body>
+        <?php if ($this->session->flashdata("success")) : ?>
+            <p class="alert alert-success"><?= $this->session->flashdata("success") ?></p>
+        <?php endif ?>
+
+        <?php if ($this->session->flashdata("danger")) : ?>
+            <p class="alert alert-danger"><?= $this->session->flashdata("danger") ?></p>
+        <?php endif ?>

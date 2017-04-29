@@ -14,9 +14,9 @@
                 <!-- Username Field -->
                 <div class="row">
                     <div class="form-group col-xs-12">
-                        <label for="username"><span class="text-danger" style="margin-right:5px;">*</span>Usuário:</label>
+                        <label for="email"><span class="text-danger" style="margin-right:5px;">*</span>Email:</label>
                         <div class="input-group">
-                            <input class="form-control" id="username" type="text" name="username" placeholder="usuário" required/>
+                            <input class="form-control" id="email" type="text" name="email" placeholder="Email" required/>
                             <span class="input-group-btn">
                                 <label class="btn btn-warning"><span class="glyphicon glyphicon-user" aria-hidden="true"></label>
                             </span>
