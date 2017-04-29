@@ -24,7 +24,12 @@ class login extends CI_Controller {
             "celular" => $this->input->post("celularUsuario"),
             "senha" => base64_encode($this->input->post("senhaUsuario"))   
         );
-        $this->Usuarios_model->salvaUsuario($usuario);
-        //this->load->template("time_view");
+        $idTime = $this->Usuarios_model->salvaUsuario($usuario);
+        $time = array(          
+          "nome" => $this->input->post("timesBuscados"),
+          "idPessoa" => $idTime 
+        );
+        $this->Usuarios_model->salvaTime($time);
+        redirect("Login") ;
     }
 }

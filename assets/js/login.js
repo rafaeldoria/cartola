@@ -16,17 +16,36 @@ $("#timeUsuario").change(function(){
 
     $.getJSON(url, function (retorno) {
         var resultado = eval(retorno);
-        $('#timesBuscados').html('');
-        
+        $('#timesBuscados').html('');        
         for (var i = 0; i < resultado.length; i++) {
             //nome é o nome do time que o cara montou no CartolaFC
             $('#timesBuscados').append('<option>' + resultado[i].nome + '</option>');
-            console.log(resultado[i].nome);
+            //console.log(resultado[i].nome);
         }
     });
 });
 
 $("#timesBuscados").change(function(){
-    $("#tecnico").val("João");
+    
+    var digtec = $("#timesBuscados").val();    
+    var urlTec = 'https://api.cartolafc.globo.com/times?q=' + digtec;
+    $.getJSON(urlTec, function (retorno) {
+        var resultado = eval(retorno);
+        for (var i = 0; i < resultado.length; i++) {
+            $("#tecnico").val(resultado[i].nome_cartola);
+        }
+    });
 });
 
+
+
+$("#busqueTime").click(function(){    
+    var digtec = $("#timesBuscados").val();    
+    var urlTec = 'https://api.cartolafc.globo.com/times?q=' + digtec;
+    $.getJSON(urlTec, function (retorno) {
+        var resultado = eval(retorno);
+        for (var i = 0; i < resultado.length; i++) {
+            $("#tecnico").val(resultado[i].nome_cartola);
+        }
+    });
+});
