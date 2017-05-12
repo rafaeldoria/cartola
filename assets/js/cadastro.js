@@ -37,8 +37,6 @@ $("#timesBuscados").change(function(){
     });
 });
 
-
-
 $("#busqueTime").click(function(){    
     var digtec = $("#timesBuscados").val();    
     var urlTec = 'https://api.cartolafc.globo.com/times?q=' + digtec;

@@ -12,10 +12,11 @@ class MY_Loader extends CI_Loader {
 
     public function template($nome, $dados = array()) {
         $this->view("includes/header");
-        $usuario = autorizar();
-        $dados = array("usuario" => $usuario['Email']);
+        $dadosUsuario = $this->session->userdata("usuario_logado");
+        $dados['usuario']  = $dadosUsuario;
+        $this->view("includes/navbar");
         $this->view($nome, $dados);
         $this->view("includes/footer");
     }
 
-}
+} 

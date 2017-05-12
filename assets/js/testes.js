@@ -1,7 +1,3 @@
-$('#btnTeste').click(function () {
-    alert('Teste');
-});
-
 
 
 function buscarTimes(timeDigitado) {
@@ -28,3 +24,4 @@ function buscarTimes(timeDigitado) {
 }
 
 
+$('#dadosUsuario').append('<li><span class="hidden-tablet">Dicas</span></li>');

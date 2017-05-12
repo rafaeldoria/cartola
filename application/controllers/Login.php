@@ -6,20 +6,20 @@ class login extends CI_Controller {
         parent::__construct();
         $this->load->model("Usuarios_model");
     }
-
+    //Tela Inicial
     public function index() {
-        //$this->load->view("includes/header");
         $this->load->telaInicial("login/login_view");
     }
-
-    public function autenticar() {        
+    
+    //Busca se existe usário no banco
+    public function autenticar() {
         $login = $this->input->post("email");
         $senha = base64_encode($this->input->post("password"));
         $usuario = $this->Usuarios_model->buscaUsuario($login, $senha);
         if ($usuario) {
-            $this->session->set_userdata("usuario_logado", $usuario);
-            $this->session->set_flashdata("success", "Logado com sucesso");
-            redirect("login/home",$usuario);
+            $this->session->set_userdata("usuario_logado", $usuario);            
+            $this->session->set_flashdata("success", "Logado com sucesso");            
+            $this->load->template("home");
         } else {
             $this->session->set_flashdata("danger", "Usuário ou senha inválida");
             redirect("/login");
@@ -46,8 +46,14 @@ class login extends CI_Controller {
         $this->Usuarios_model->salvaTime($time);
         redirect("Login");
     }
+
+    public function logout() {
+        $this->session->unset_userdata("usuario_logado");
+        $this->session->set_flashdata("success", "Deslogado");
+        redirect("/login");
+    }
     
-    public function home(){
+    public function home() {
         $this->load->template("home");
     }
 

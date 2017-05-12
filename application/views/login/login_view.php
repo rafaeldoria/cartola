@@ -10,13 +10,15 @@
                     </div>
                 </div>
                 <!-- Login Form -->
+                <!-- Login Form -->
                 <form role="form" method="post" action="<?= base_url('Login/autenticar') ?>" id="formulario_login">                
+                <!-- Username Field -->
                 <!-- Username Field -->
                 <div class="row">
                     <div class="form-group col-xs-12">
                         <label for="email"><span class="text-danger" style="margin-right:5px;">*</span>Email:</label>
                         <div class="input-group">
-                            <input class="form-control" id="email" type="text" name="email" placeholder="Email" required/>
+                            <input class="form-control" id="email" type="email" name="email" placeholder="Email" required/>
                             <span class="input-group-btn">
                                 <label class="btn btn-warning"><span class="glyphicon glyphicon-user" aria-hidden="true"></label>
                             </span>
@@ -40,10 +42,11 @@
                 <div class="row">
                     <div class="form-group col-xs-8">
                         <button id="btnCadastrar" class="btn btn-warning" type="submit">Logar</button>
-                        <?= anchor('Login/novo_login', 'Cadastrar', array("class" => "btn btn-warning")); ?></li>                            
+                        <!--<button id="btnLogin" class="btn btn-warning">Logar</button>-->                        
+                        <?= anchor('Cadastro', 'Cadastrar', array("class" => "btn btn-warning")); ?>
                     </div>
                 </div>  
-                </form>
+
                 <!-- End of Login Form -->
             </div>
         </div>

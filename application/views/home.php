@@ -1,17 +1,5 @@
-<!DOCTYPE html>
-<!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
--->
-<html>
-    <head>
-        <meta charset="UTF-8">
-        <title></title>
-    </head>
-    <body>
-        <?php
-        echo $usuario;
-        ?>
-    </body>
-</html>
+<?php    
+    //$dadosUsuarioLogado = $this->session->userdata("usuario_logado");
+    //echo($dadosUsuarioLogado['Email']);    
+    echo $usuario;  
+?>
