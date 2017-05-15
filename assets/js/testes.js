@@ -1,27 +1,13 @@
+$.getJSON("http://localhost:8090/cartola/Usuario/lista_dados", function (retorno) {
+    var user = eval(retorno);
+    for (var i = 0; i < user.length; i++) {
 
-
-function buscarTimes(timeDigitado) {
-    //console.log("teste");
-    var url = 'https://api.cartolafc.globo.com/times?q=' + timeDigitado;
-
-    $.getJSON(url, function (retorno) {
-        var resultado = eval(retorno);
-        for (var i = 0; i < /*resultado.length*/ 5; i++) {
-            alert(resultado[i].nome);
-        }
-    });
-
-    /* $.ajax({
-     method: 'GET',
-     url: url,
-     headers: {
-     'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8;'
-     }
-     }).then(function successCallback(response) {
-     alert('BUG');
-     console.log(response.data);
-     });*/
-}
-
-
-$('#dadosUsuario').append('<li><span class="hidden-tablet">Dicas</span></li>');
+        $('#tabelaUsuario').append('<tr>' +
+                '<td><h2>' + user[i].Nome + '</h2></td>' +
+                '<td><h2>' + user[i].NomeTime + '</h2></td>' +
+                '<td><h2>' + user[i].Saldo + '</h2></td>' +
+                '<td><h3><button id="adicionarSaldo' + i + '" class="btn btn-warning btn-lg" value="">Adiocionar Saldo</button> ' +
+                '<button id="participarRodada' + i + '" class="btn btn-warning btn-lg" value="">Participar de uma Rodada</button> </h3>' +
+                '</tr>');
+    }
+});

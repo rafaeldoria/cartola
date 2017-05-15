@@ -6,12 +6,13 @@ class login extends CI_Controller {
         parent::__construct();
         $this->load->model("Usuarios_model");
     }
+    
     //Tela Inicial
     public function index() {
         $this->load->telaInicial("login/login_view");
     }
     
-    //Busca se existe usário no banco
+    //Busca se existe usário no banco/login
     public function autenticar() {
         $login = $this->input->post("email");
         $senha = base64_encode($this->input->post("password"));
@@ -51,10 +52,6 @@ class login extends CI_Controller {
         $this->session->unset_userdata("usuario_logado");
         $this->session->set_flashdata("success", "Deslogado");
         redirect("/login");
-    }
-    
-    public function home() {
-        $this->load->template("home");
     }
 
 }

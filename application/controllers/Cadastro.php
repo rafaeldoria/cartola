@@ -21,7 +21,7 @@ class cadastro extends CI_Controller {
         );
         $idUsuario = $this->Usuarios_model->salvaUsuario($usuario);
         $time = array(
-            "nome" => $this->input->post("timesBuscados"),
+            "nomeTime" => $this->input->post("timesBuscados"),
             "idPessoa" => $idUsuario
         );
         $this->Times_model->salvaTime($time);

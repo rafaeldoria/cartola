@@ -1,4 +1,3 @@
-
 $("#senhaUsuario2").keyup(function(){
     var campo1 = $("#senhaUsuario").val();
     var campo2 = $("#senhaUsuario2").val();
