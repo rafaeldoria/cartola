@@ -18,7 +18,8 @@
 
 <!-- js criadas -->
 <script src="<?= base_url('assets/js/cadastro.js') ?>"></script> 
-<script src="<?= base_url('assets/js/autenticacao.js') ?>"></script> 
+<script src="<?= base_url('assets/js/usuario.js') ?>"></script> 
+<script src="<?= base_url('assets/js/saldousuario.js') ?>"></script> 
 
 <!-- para testes -->
 <script src="<?= base_url('assets/js/testes.js') ?>"></script>

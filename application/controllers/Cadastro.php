@@ -27,21 +27,14 @@ class cadastro extends CI_Controller {
         $this->Times_model->salvaTime($time);
         redirect("Login");
     }
-
-    public function homeDoria() {
-        //autorizar();
-        $this->load->template("home");
+    
+    public function edita_cadastro(){
+        $usuario = array(
+            "nome" => $this->input->post("nomeUsuario"),
+            "email" => $this->input->post("emailUsuario"),
+            "celular" => $this->input->post("celularUsuario")            
+        );   
+        $this->Usuarios_model->editaUsuario($usuario);
+        redirect("home");
     }
-
-    public function home() {
-        //salvaSessao();
-        $this->load->template("home");
-    }
-
-    public function logout() {
-        $this->session->unset_userdata("usuario_logado");
-        $this->session->set_flashdata("success", "Deslogado");
-        redirect("/login");
-    }
-
 }

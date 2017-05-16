@@ -19,6 +19,7 @@ class MY_Loader extends CI_Loader {
         $this->view("includes/navbar", $dados);
         $this->view($nome, $dados);
         $this->view("includes/footer");
+        $this->view("includes/modal_edita_cadastro");
     }
 
 } 

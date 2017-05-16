@@ -11,8 +11,7 @@ class Usuario extends CI_Controller {
         
     }
     
-    public function lista_dados() {
-        //$idPessoa = $usuario['IdPessoa'];
+    public function lista_dados() {        
         echo $this->Usuarios_model->listaDadosUsuario();
     }
 
