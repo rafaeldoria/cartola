@@ -20,7 +20,7 @@ class login extends CI_Controller {
         if ($usuario) {
             $this->session->set_userdata("usuario_logado", $usuario);            
             $this->session->set_flashdata("success", "Logado com sucesso");            
-            $this->load->template("home");
+            $this->load->template("usuario/usuario_view");
         } else {
             $this->session->set_flashdata("danger", "Usuário ou senha inválida");
             redirect("/login");
